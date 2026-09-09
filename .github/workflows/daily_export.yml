@@ -26,6 +26,7 @@ jobs:
           pip install -r requirements.txt
           playwright install --with-deps chromium
 
+      - name: Test connectivity run: curl -v --max-time 15 https://trd.grupatopex.com:5051/auth/login || true
       - name: Run export script
         env:
           TRD_USERNAME: ${{ secrets.TRD_USERNAME }}
